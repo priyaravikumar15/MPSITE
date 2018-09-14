@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+#menus a
+{
+    color:#f0f0f0;
+}
+#footermenus a
+{
+    margin:10px;
+    padding:10px;
+    color:#f0f0f0;
+    text-align:center;
+}
+#brand a
+{
+    color:#f0f0f0;
+}
+.menuslist li
+{
+    display:inline-block;
+    padding-left:20px;
+    padding-right:20px;
+}
+.menuslist i{
+    font-size:20px;
+}
+#services i
+{
+    display:inline-block;
+    font-size:50px;
+    text-align: center;
+}
+#services .col-md-3
+{ 
+    padding:10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 240, .2);
+}
+.shoplist li
+{
+    display:block;
+    padding:10px;
+}
+.shoplist,.shoplist a
+{
+    background-color:#272727;
+    color:#f0f0f0;
+    margin:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#footermenus a, #footermenus h6 {
+    text-align:center;
+    color:#f0f0f0;
+}
+#shopcontent{
+    margin-top:10px;
+    margin-bottom:10px;
+    /*background-color:#eaeaea;*/
+}
+#innerproducts
+{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    padding: 10px;
+    margin:10px;
+}    

@@ -1,0 +1,68 @@
+<input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />
+    <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Category</th>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Product Des</th>
+          <th>Product Stock</th>
+          <th>Product Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor ="let product of products|filter:searchs">
+          <td>{{product.productCategory}}</td>
+          <td>{{product.productId}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.productDesc}}</td>
+          <td>{{product.productStock}}</td>
+          <td>{{product.productPrice|currency:'USD':true}}</td>
+          <td><button class="btn btn-info"(click)="showproducts()">View</button>&nbsp;
+              <button class="btn btn-info"(click)="addcart()">Add to Cart</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class='panel panel-info'>
+    <!--  <div class='panel-heading' style='font-size:large'>
+        <input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />&nbsp;
+      </div>-->
+      <p *ngIf="btsubmit">Your Searching for {{searchs}}</p>      
+      <div class='panel-body' *ngFor="let product of products| filter:searchs">
+          <div class='row' *ngIf ="searchcat" id="innerproducts">
+              <div class='col-md-6'>
+                  <div class='row'>
+                      <div class='col-md-3'>Name:</div>
+                      <div class='col-md-6'>{{product.productName}}</div>
+                  </div>
+                  <div class='row'>
+                      <div class='col-md-3'>Description:</div>
+                      <div class='col-md-6'>{{product.productDesc}}</div>
+                  </div>
+                  <div class='row'>
+                      <div class='col-md-3'>Availability:</div>
+                      <div class='col-md-6'>{{product.productStock}}</div>
+                  </div>
+                  <div class='row'>
+                      <div class='col-md-3'>Price:</div>
+                      <div class='col-md-6'>{{product.productPrice|currency:'USD':true}}</div>
+                  </div>
+                  <div class='row'>
+                      <div class='col-md-12'>
+                          <img class='center-block img-responsive'[style.width.px]='200'[style.margin.px]='2' [src]='product.productImageUrl'
+                          [title]='product.productName'>
+                      </div>
+                  </div>
+              </div>
+    
+              <div class='col-md-6'>
+                    <button class="btn btn-info"(click)="addcart()">Add to Cart</button><br/><br/>
+                    <button class="btn btn-info"(click)="view()">Quick View</button>
+              </div>
+          </div>
+      </div>
+    </div>

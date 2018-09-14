@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="shoplist">
+      <h6>List of Category</h6>
+      <li class="active"><a routerLink="allproducts"><i class="fa fa-caret-right custom" ></i> All Products</a></li>
+      <li><a routerLink="books"><i class="fa fa-caret-right custom" ></i> Books</a></li>
+      <li><a routerLink="computers"><i class="fa fa-caret-right custom" ></i> Computers</a></li>
+      <li><a routerLink="dress"><i class="fa fa-caret-right custom" ></i> Dress</a></li>
+      <li><a routerLink="foods"><i class="fa fa-caret-right custom" ></i> Foods</a></li>
+    </ul>
+  </div>
+  <div class="col-md-9" id="shopcontent">
+    <router-outlet></router-outlet>
+    <!--<p *ngIf="books.length>0">
+  books works!
+</p>
+<ng-template>booksss</ng-template>-->
+</div>

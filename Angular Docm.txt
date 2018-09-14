@@ -1,0 +1,284 @@
+MODULE 1: UNDERSTANDING JAVASCRIPT
+•	Introduction to Javascript
+•	Control Structures
+•	Loops in Javascript
+•	Operators in Javascript
+•	Handling functions
+•	Objects and Functions in Javascript
+•	Javascript DOM
+•	Javascript Events and Event Handling
+MODULE 2: GETTING INTO THE ANGULAR WORLD
+•	Angular Advantages
+•	Opportunities for Angular
+•	Angular Versions
+•	AngularJS to Angular 5
+•	Semantic Versioning
+MODULE 3: INTRODUCTION TO TYPESCRIPT
+•	Understanding TypeScript
+•	Basic Types
+•	Working with Variables
+•	Working with Arrays
+•	Working with Classes
+•	Working with Objects
+•	Working with Interfaces
+•	Working with Constructors
+•	Type Definitio ns
+•	Compiling TypeScript
+•	Linting
+MODULE 4: ES2015 PRIMER
+•	Understanding Let and Const
+•	Working with Template Strings
+•	Mastering Lambda Functions
+•	Working with Generics
+•	Working with Modules
+MODULE 5: ENVIRONMENT SETUP
+•	Node / NPM
+•	Polyfills
+•	Babels
+•	TypeScript
+•	Module Bundler (Webpack)
+•	Code Linting
+•	Test Setup
+•	Application File Structure
+•	Angular CLI
+•	Code Editors
+MODULE 6: MODULES
+•	Why and when to use Modules
+•	Understanding NgModule
+•	Working with Declarations in Modules
+•	Using Providers
+•	Managing Imports
+•	How to use Bootstrapping
+•	The Core Module
+•	Shared Modules
+MODULE 7: COMPONENTS
+•	Introduction to Components
+•	Working with Component Architecture Patterns
+•	Decorator Metadata
+•	State & Behaviour in Angular
+•	Inputs and Outputs
+MODULE 8: TEMPLATES
+•	Inline vs External
+•	Mastering Template Expressions
+•	Data Bindings
+•	Data Bindings Syntax
+•	Working with Data & Event Bindings
+•	Working with Built-in Structural Directives
+•	Working with Built-in Attribute Directives
+MODULE 9: CUSTOM DIRECTIVES
+•	Directives Overview
+•	Types of Directive
+•	Create your own Attribute Directive
+•	Writing Attribute Directive Code
+•	Respo nd to User Initiated Events
+•	Pass values into the directive with an @Inpu t data binding
+•	Binding to an @Inpu t property
+•	Bind to an @Inpu t alias
+•	Write a harness to try it
+•	Create your own Structural Directive
+•	NgIf case study
+•	Inside *ngFor
+•	Inside NgSwitch directives
+•	The <ng-template>
+•	Working with <ng -container>
+•	TemplateRef and ViewContainerRef
+MODULE 10: PIPES
+•	Using pipes
+•	Built-in pipes
+•	Parameterizing a pipe
+•	Chaining pipes
+•	Custom pipes
+•	The PipeTransform interface
+•	Power Boost Calculator
+•	Pipes and change detectio n
+•	Pure and impure pipes
+•	Next steps
+MODULE 11: SERVICES & DEPENDENCY INJECTION
+•	Getting familiar with Ser vices
+•	Building a Service
+•	Getting familiar with Dependency Injection
+•	Working with Injectors
+•	Working with Providers
+•	Registering Providers with real time examples
+MODULE 12: LIFECYCLE HOOKS & CHANGE DETECTION
+•	Understanding Component LifeCycle
+•	Using ngOnInit
+•	All lifecycle Hoo ks
+•	Understanding Change Detection
+•	Working with Zo ne.js
+
+MODULE 13: ROUTING & ADVANCED ROUTING
+•	The Component Router
+•	Defining Routes
+•	Working with Navigation
+•	Understanding Route Params
+•	Child Routes
+•	Route Guards
+•	Route Resolves
+MODULE 14: MASTERING TEMPLATE-DRIVEN FORMS & MODEL-DRIVEN FORMS
+•	Introduction to forms
+•	Overview of Template-driven forms
+•	Understanding Validatio ns
+•	Introduction to ‘Reactive’ forms
+•	FormGroup & FormControl Class
+•	Validators Class
+MODULE 15: ASYNCHRONOUS OPERATIONS & ADVANCED HTTP
+•	Introduction to Async
+•	Promises
+•	Working with Observables
+•	EventEmitter
+•	Async Pipes
+•	Handling HTTP Request / Response
+•	Headers & Request Settings
+•	Providing HTTP
+MODULE 16: COMPONENT STYLING
+•	Introduction to Angular Styling
+•	Using Component Styling
+•	Style Scope
+•	Shadow DOM
+•	Loading Component Styles
+MODULE 17: WORKING WITH ANIMATIONS
+•	Introduction to Animations
+•	Animatio ns Setup
+•	Understanding States & Transitions
+•	Entering and Leaving from States
+•	Animatable Properties
+•	Animatable Units
+•	Automatic property calculation
+•	Understanding Animation Timing
+•	Multistep Animation using Keyframes
+MODULE 18: TESTING ANGULAR APPLICATIONS
+•	Introduction to Testing
+•	Unit Testing
+•	Setup Jasmine Framework
+•	Component Test Basics
+•	Component Test Scenarios
+•	Karma
+•	E2E Testing & Protractor
+MODULE 19: SECURITY & INTERNATIONALIZATION
+•	Importance of Security
+•	Security in Angular
+•	Sanitize the Dangerous Values
+•	Trusting Values
+•	bypassSecurityTr ustHtml
+•	bypassSecurityTr ustScript
+•	bypassSecurityTr ustStyle
+•	bypassSecurityTr ustUrl
+•	bypassSecurityTr ustReso urceUrl
+•	Cross-site Request Forgery
+•	Pre-compiled and r untime
+•	Using ng2-Translate
+MODULE 20: PERFORMANCE, OPTIMIZATION & DEPLOYMENT
+•	Change Detection Strategy
+•	Running outside the Zone
+•	Understanding Web Workers
+•	Precompiling (AoT)
+•	Lazy Loading
+•	Deplo yment Best Practices
+•	Production Mode
+
+/******************************************************************************/
+
+Angular Documentation And Syntax:
+
+Commands:
+
+To run: 
+1. ng serve
+2. ng serve --host 0.0.0.0 --port 4200 (eg)
+
+Topics:
+
+/****Topic 1:*****/
+    Install External Bootstrap file 
+Command:
+Step 1:
+    file folder>npm install bootstrap --save
+    file folder>npm install jquery --save
+    file folder>npm install pooper.js --save    
+Step 2:
+    Open angular.json file 
+    update the script[] into
+    "scripts": [
+              "../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/bootstrap/dist/bootstrap.min.js"
+            ],
+Step 3:
+    update the style.css with below Command
+        -> @import "~bootstrap/dist/css/bootstrap.css";
+
+/****Topic 2:*****/
+
+Routing
+
+Component Routing-->syntax:
+
+Step 1: app.module.ts file
+
+include @import { routes,RouterModule } from '@angular/router'
+import[RouterModule.forRoot(routes)]
+
+export const routes:Routes =[
+    {path:'',component:Appcompoenent},
+    { .. }
+]
+
+Step 2:app.component.html
+
+<a routerLink="homepage">Home</a>
+<a ...></a>
+<router-outlet></router-outlet>--This will show the content 
+
+Module Routing-->syntax:*********************
+
+/****Topic 3:*****/
+
+1.NgModel:
+
+used for two way binding.Should use the form-control class
+syntax:
+[(ngModel)]="userdefinedname"
+{{userdefinedname}}
+
+2.Pipe:
+Type 1:Built-in
+Type 2:Custom Pipe
+
+Type 1: Syntax
+<...|currency:'USD':'true'>
+<...|datetime:'dd:mm:yy':'true'>
+
+/****Topic 4:*****/
+
+Search bar using pipe
+
+>npm install ng2-search-filter --save
+Include import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+Search bar 
+Line 1 : <input class="form-control" type="text" 
+#searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" /> 
+Line 2 : <... *ngFor ="let product of products|filter:searchs">
+
+
+
+/****Topic 5:*****/
+
+Directives:
+1.*ngIf
+2.*ngFor
+3.*ngSwitch
+4.custom directives
+
+1.*ngIf
+syntax:
+<*ngIf = "username then else username" >
+
+2.*ngFor
+syntax:
+<*ngFor ="let userdefinedname of arrayname">
+{{userdefinedname.arrayitemname}}
+
+3.*ngSwitch
+syntax:
+<*ngSwitch>************

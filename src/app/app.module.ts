@@ -13,28 +13,11 @@ import { ComputersComponent } from './shop/computers/computers.component';
 import { DressComponent } from './shop/dress/dress.component';
 import { FoodsComponent } from './shop/foods/foods.component';
 import { AllproductsComponent } from './shop/allproducts/allproducts.component';
-
+import { CheckoutComponent } from './checkout/checkout.component';
 /*Search Filter */
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-/*Routing*/
-import { Routes, RouterModule } from '@angular/router';
-
-
-export const routes:Routes =[
-
-  { path:'' , redirectTo:'/home', pathMatch :'full'},
-  { path:'home' , component:HomeComponent},
-  { path:'Shop' ,component:ShopComponent, children:[
-    { path:'allproducts',component:AllproductsComponent},
-    { path:'books',component:BooksComponent },
-    { path:'computers',component:ComputersComponent},
-    { path:'dress',component:DressComponent},
-    { path:'foods',component:FoodsComponent},
-  ]},
-  { path:'Login',component:LoginComponent},
- // { path:'shopcatgory/category',loadChildren:'./app/shopcatgory/catgory/CategoryComponent'}
-]
+import { routing } from './app.routing';
+import { ProductaddComponent } from './shop/productadd/productadd.component';
 
 @NgModule({
   declarations: [
@@ -48,9 +31,11 @@ export const routes:Routes =[
     DressComponent,
     FoodsComponent,
     AllproductsComponent,
+    CheckoutComponent,
+    ProductaddComponent,
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(routes),FormsModule,Ng2SearchPipeModule,
+    BrowserModule,routing,FormsModule,Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

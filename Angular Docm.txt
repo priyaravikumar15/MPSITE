@@ -282,3 +282,22 @@ syntax:
 3.*ngSwitch
 syntax:
 <*ngSwitch>************
+
+
+/****Topic 6:*****/
+Router-Guards
+1.canActivate
+2.canLoad
+3.canActivateChild
+4.canDeactivate
+
+/*****Topic 7:******/
+Router Navigation::Notes
+
+adding link to another pages
+
+<... (click)="functionname()"..>
+functionname()
+{
+    this.router.navigation[('navigationpage')]
+}

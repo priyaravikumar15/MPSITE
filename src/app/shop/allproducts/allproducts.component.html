@@ -1,5 +1,44 @@
-<input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />
-    <div class="table-responsive">
+<div class="row" id="shopmenu"> 
+    <div class="col-md-8">
+        <input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />
+    </div>
+    <div class="col-md-1">
+        <a class="nav-item nav-link">{{count}}Items</a>
+    </div>
+    <div class="col-md-1" *ngIf="products" (change)="pricing()"> 
+            <a class="nav-item nav-link">Price</a>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-info" (click)="addproducts()" >Add Products</button>
+    </div>
+    <!--<div class="col-md-2">
+            <a class="nav-item nav-link" routerLink="#"><i class="fa fa-shopping-cart" aria-hidden="true">{{productPrice}}</i></a>
+    </div>-->
+</div>
+<div class="row">
+<div class="card col-md-4" *ngFor="let product of products| filter:searchs">
+    <img class="card-img-top" [src]='product.productImageUrl' [style.height.px]='250'[style.margin.px]='2' [title]='product.productName'>
+    <div class="card-block">
+        <p class="card-title">
+            <b>{{product.productName}}</b><span class="text-muted"></span>
+        </p>
+        <p class="card-text">
+            ProductId : {{product.productId}}<br>
+            Category  : {{product.productCategory}} <br>
+            Quantity  : {{ product.productStock }} sold <br>
+            Price     : {{product.productPrice|currency:'USD':true}} <br>
+           <!-- <p>{{ product.commentsCount }} comments | {{ product.likesCount }} likes</p>-->
+        </p>
+    </div>
+        <button class="btn btn-info">
+            <i class="fa fa-plus"(click)="addcart()"></i> 
+                Add to Cart
+            <i class="fa fa-minus" (click)=removecart()></i>
+        </button>
+</div>
+</div>
+
+    <div class="table-responsive" hidden>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -20,14 +59,15 @@
           <td>{{product.productDesc}}</td>
           <td>{{product.productStock}}</td>
           <td>{{product.productPrice|currency:'USD':true}}</td>
-          <td><button class="btn btn-info"(click)="showproducts()">View</button>&nbsp;
-              <button class="btn btn-info"(click)="addcart()">Add to Cart</button></td>
+          <td><button class="btn btn-info"(click)="showproducts()">View</button><br/><br/>
+              <button class="btn btn-info"><i class="fa fa-plus"(click)="addcart()"></i> Add to Cart <i class="fa fa-minus" (click)=removecart()></i></button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
   
-  <div class='panel panel-info'>
+  <div class='panel panel-info' hidden>
     <!--  <div class='panel-heading' style='font-size:large'>
         <input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />&nbsp;
       </div>-->
@@ -49,7 +89,7 @@
                   </div>
                   <div class='row'>
                       <div class='col-md-3'>Price:</div>
-                      <div class='col-md-6'>{{product.productPrice|currency:'USD':true}}</div>
+                      <div class='col-md-6' name="price">{{product.productPrice|currency:'USD':true}}</div>
                   </div>
                   <div class='row'>
                       <div class='col-md-12'>
@@ -57,12 +97,27 @@
                           [title]='product.productName'>
                       </div>
                   </div>
+                  <!--<div class='row'>
+                      <div class='col-md-12'>
+                            <button class="btn btn-info">
+                                    <i class="fa fa-plus"(click)="addcart()"></i> 
+                                        Add to Cart 
+                                    <i class="fa fa-minus" (click)=removecart()></i>
+                            </button>
+                      </div>
+                  </div>-->
               </div>
     
               <div class='col-md-6'>
-                    <button class="btn btn-info"(click)="addcart()">Add to Cart</button><br/><br/>
+                    <button class="btn btn-info">
+                        <i class="fa fa-plus"(click)="addcart()"></i> 
+                            Add to Cart
+                        <i class="fa fa-minus" (click)=removecart()></i>
+                    </button>
+                    <br/><br/>
                     <button class="btn btn-info"(click)="view()">Quick View</button>
               </div>
           </div>
       </div>
     </div>
+    <!--<app-root #childata ="ngModel" [(ngModel)]="count"></app-root>-->

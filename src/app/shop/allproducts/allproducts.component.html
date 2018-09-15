@@ -2,12 +2,14 @@
     <div class="col-md-8">
         <input class="form-control" type="text" #searchcat = "ngModel" [(ngModel)]="searchs" placeholder="Search products" />
     </div>
-    <div class="col-md-1">
-        <a class="nav-item nav-link">{{count}}Items</a>
+    <div class="col-md-2">
+        <a class="nav-item nav-link">You Have Order<b> {{count}} Items</b></a>
     </div>
-    <div class="col-md-1" *ngIf="products" (change)="pricing()"> 
-            <a class="nav-item nav-link">Price</a>
-    </div>
+    <!--<div class="col-md-1" (change)="pricing()" *ngIf="content else content_1"> 
+        <ng-template #content>{{products.productPrice*count}}Price</ng-template>
+        <ng-template #content_1>{{products.productPrice*count}}Price</ng-template>
+        <a class="nav-item nav-link">{{product.productPrice *count}}Price</a>
+    </div>-->
     <div class="col-md-2">
         <button class="btn btn-info" (click)="addproducts()" >Add Products</button>
     </div>
@@ -24,7 +26,7 @@
         </p>
         <p class="card-text">
             ProductId : {{product.productId}}<br>
-            Category  : {{product.productCategory}} <br>
+            Category  : {{product.productCategory}}<br>
             Quantity  : {{ product.productStock }} sold <br>
             Price     : {{product.productPrice|currency:'USD':true}} <br>
            <!-- <p>{{ product.commentsCount }} comments | {{ product.likesCount }} likes</p>-->
